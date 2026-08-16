@@ -246,92 +246,10 @@
 
       </div>
 
-      <!-- Reader Request Box -->
-      <div class="submit-callout">
-        <h3 class="submit-callout__title">💡 想看什么？向作者提交白皮书“点单”</h3>
-        <p class="submit-callout__desc">如果你对某种特定类型的本地体验感兴趣（比如<b>“成都地道的串串店”</b>、<b>“适合发呆的老茶馆”</b>或<b>“隐秘的社区书店”</b>），欢迎向我提交你的“点单”需求。如果正好有了解或去过，我会优先整理并写成白皮书分享给大家！</p>
-        
-        <div class="submit-types" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 22px;">
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🍢 地道串串/老火锅</span>
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🍵 市井老茶馆/戏台</span>
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">📚 独立书店/思想客厅</span>
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🧸 社区公共艺术/儿童友好</span>
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">⚙️ 物理木作/机巧工坊</span>
-          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">☕ 慢社交/发呆角落</span>
-        </div>
-
-        <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ 提交你的“点单”需求 →</button>
-      </div>
+      <p class="more-coming" style="text-align: center; margin: 40px auto 20px; font-size: 14px; color: var(--muted);">更多城市与空间持续收录中。如果你想看某种特定类型的体验（如地道串串店、社区老茶馆），欢迎在 <a href="#" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:underline;">[ 飞书多维表格 ]</a> 向作者点单。</p>
 
     </div>
   </main>
-
-  <!-- Interactive Submission Modal -->
-  <div id="submitModal" class="modal-overlay" onclick="if(event.target===this) toggleSubmitModal(false)">
-    <div class="modal-card">
-      <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
-      <h3 class="modal-title">向作者点单 · 提交白皮书需求</h3>
-      <p class="modal-subtitle">告诉我们你想了解什么类型的空间或店铺（如：串串店、茶馆、书店），作者了解后将优先分享。</p>
-      
-      <form onsubmit="handleFormSubmit(event)">
-        <div class="form-group">
-          <label>你想了解的店铺 / 主题类型 *</label>
-          <input type="text" id="spaceName" required placeholder="例如：成都地道串串店 / 适合发呆的老茶馆">
-        </div>
-        <div class="form-group">
-          <label>具体城市 / 区域</label>
-          <input type="text" id="spaceLocation" placeholder="例如：成都 · 玉林 / 武侯区">
-        </div>
-        <div class="form-group">
-          <label>你想在白皮书中了解到什么细节？</label>
-          <textarea id="spaceReason" placeholder="例如：想了解真实消费、特色菜品/玩法、避坑贴士、适合独自去还是朋友聚会？"></textarea>
-        </div>
-        <div class="form-group">
-          <label>你的联系方式（小红书 / 微信 / 邮箱）</label>
-          <input type="text" id="contactInfo" placeholder="选填，白皮书发布后方便第一时间通知你">
-        </div>
-        <div class="modal-actions">
-          <button type="submit" class="btn-primary">发送点单邮件 →</button>
-          <button type="button" onclick="copyFormContent()" class="btn-secondary">一键复制点单文本</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function toggleSubmitModal(show) {
-      const modal = document.getElementById('submitModal');
-      if (show) modal.classList.add('active');
-      else modal.classList.remove('active');
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('spaceName').value;
-      const location = document.getElementById('spaceLocation').value;
-      const reason = document.getElementById('spaceReason').value;
-      const contact = document.getElementById('contactInfo').value;
-
-      const subject = encodeURIComponent(`[The Paper Atlas 读者点单] ${name}`);
-      const body = encodeURIComponent(`想了解的主题/店铺：${name}\n区域：${location}\n想了解的细节：\n${reason}\n\n联系方式：${contact}`);
-      
-      window.location.href = `mailto:dgjj1991@gmail.com?subject=${subject}&body=${body}`;
-      alert('感谢你的点单！已为你调起邮件发送框。');
-      toggleSubmitModal(false);
-    }
-
-    function copyFormContent() {
-      const name = document.getElementById('spaceName').value || '未填类型';
-      const location = document.getElementById('spaceLocation').value || '未填位置';
-      const reason = document.getElementById('spaceReason').value || '未填细节';
-      const contact = document.getElementById('contactInfo').value || '未填联系方式';
-
-      const text = `【The Paper Atlas 读者点单】\n想看的主题/店铺：${name}\n位置：${location}\n关注细节：${reason}\n联系方式：${contact}`;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('点单文本已复制到剪贴板！可以直接发送在小红书私信或邮件中。');
-      });
-    }
-  </script>
 
   <!-- Footer -->
   <footer class="footer">

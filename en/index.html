@@ -127,92 +127,10 @@
 
       </div>
 
-      <!-- Submission Callout Box -->
-      <div class="submit-callout">
-        <h3 class="submit-callout__title">More Cities &amp; Spaces Coming Soon</h3>
-        <p class="submit-callout__desc">We actively seek places that are <b>honest, unhurried, culturally rooted, and welcoming</b>. If you know somewhere worth writing about, recommend it to us.</p>
-
-        <div class="submit-types" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 22px;">
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🍵 Local Teahouses &amp; Opera</span>
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">📚 Independent Bookstores</span>
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🧸 Community Art &amp; Healing</span>
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">⚙️ Automata &amp; Craftsmen</span>
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🎸 Indie Music &amp; Night Jam</span>
-          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">☕ Slow Cafe &amp; Atmosphere</span>
-        </div>
-
-        <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ Recommend a Place →</button>
-      </div>
+      <p class="more-coming" style="text-align: center; margin: 40px auto 20px; font-size: 14px; color: var(--muted);">More places coming soon. Have a spot or request in mind? Submit your wishlist on our <a href="#" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:underline;">[ Google Form ]</a>.</p>
 
     </div>
   </main>
-
-  <!-- Interactive Submission Modal -->
-  <div id="submitModal" class="modal-overlay" onclick="if(event.target===this) toggleSubmitModal(false)">
-    <div class="modal-card">
-      <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
-      <h3 class="modal-title">Recommend a Place</h3>
-      <p class="modal-subtitle">We look for: Local teahouses, indie bookstores, community art, kinetic crafts, live music, and slow cafes.</p>
-      
-      <form onsubmit="handleFormSubmit(event)">
-        <div class="form-group">
-          <label>Place / Destination Name *</label>
-          <input type="text" id="spaceName" required placeholder="e.g. Youxing Bookstore / Local Teahouse">
-        </div>
-        <div class="form-group">
-          <label>City / District *</label>
-          <input type="text" id="spaceLocation" required placeholder="e.g. Chengdu · Chenghua District">
-        </div>
-        <div class="form-group">
-          <label>Why Should We Visit?</label>
-          <textarea id="spaceReason" placeholder="What makes this place special? What's the story or vibe?"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Your Contact (Instagram / Email / WeChat)</label>
-          <input type="text" id="contactInfo" placeholder="Optional — to keep you updated">
-        </div>
-        <div class="modal-actions">
-          <button type="submit" class="btn-primary">Send Email Recommendation →</button>
-          <button type="button" onclick="copyFormContent()" class="btn-secondary">Copy Recommendation Text</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function toggleSubmitModal(show) {
-      const modal = document.getElementById('submitModal');
-      if (show) modal.classList.add('active');
-      else modal.classList.remove('active');
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('spaceName').value;
-      const location = document.getElementById('spaceLocation').value;
-      const reason = document.getElementById('spaceReason').value;
-      const contact = document.getElementById('contactInfo').value;
-
-      const subject = encodeURIComponent(`[The Paper Atlas Recommendation] ${name} (${location})`);
-      const body = encodeURIComponent(`Destination: ${name}\nLocation: ${location}\nWhy visit:\n${reason}\n\nContact: ${contact}`);
-      
-      window.location.href = `mailto:dgjj1991@gmail.com?subject=${subject}&body=${body}`;
-      alert('Thank you for your recommendation!');
-      toggleSubmitModal(false);
-    }
-
-    function copyFormContent() {
-      const name = document.getElementById('spaceName').value || 'N/A';
-      const location = document.getElementById('spaceLocation').value || 'N/A';
-      const reason = document.getElementById('spaceReason').value || 'N/A';
-      const contact = document.getElementById('contactInfo').value || 'N/A';
-
-      const text = `[The Paper Atlas Recommendation]\nPlace: ${name}\nLocation: ${location}\nWhy visit: ${reason}\nContact: ${contact}`;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Recommendation copied to clipboard!');
-      });
-    }
-  </script>
 
   <!-- Footer -->
   <footer class="footer">

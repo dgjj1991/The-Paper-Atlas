@@ -249,7 +249,17 @@
       <!-- Submission Callout Box -->
       <div class="submit-callout">
         <h3 class="submit-callout__title">更多城市与空间持续收录中</h3>
-        <p class="submit-callout__desc">如果你知道哪里值得被写下来，欢迎向我们推荐。无论是老茶馆、独立书店还是隐秘手作工坊。</p>
+        <p class="submit-callout__desc">我们常年寻找并实地记录那些<b>不追赶流行、真实诚恳、有温度与人文学养</b>的空间。如果你知道哪里值得被写下来，欢迎向我们推荐。</p>
+        
+        <div class="submit-types" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 22px;">
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🍵 市井老茶馆与民俗戏台</span>
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">📚 独立书店与思想客厅</span>
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🧸 社区公共艺术与儿童疗愈</span>
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">⚙️ 物理木作与机巧工坊</span>
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🎸 独立音乐与深夜 Live</span>
+          <span style="font-size: 12.5px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">☕ 慢社交与氛围空间</span>
+        </div>
+
         <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ 推荐一个值得留下的空间 →</button>
       </div>
 
@@ -261,7 +271,7 @@
     <div class="modal-card">
       <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
       <h3 class="modal-title">推荐一个值得留下的空间</h3>
-      <p class="modal-subtitle">告诉我们你喜爱的空间或地方，我们将安排实地走访与深度调研。</p>
+      <p class="modal-subtitle">我们偏好：老茶馆、独立书店、社区艺术、物理手作、独立音乐与慢社交空间。</p>
       
       <form onsubmit="handleFormSubmit(event)">
         <div class="form-group">

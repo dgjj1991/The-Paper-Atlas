@@ -130,7 +130,17 @@
       <!-- Submission Callout Box -->
       <div class="submit-callout">
         <h3 class="submit-callout__title">More Cities &amp; Spaces Coming Soon</h3>
-        <p class="submit-callout__desc">Been somewhere worth writing about? Know a local teahouse, hidden bookstore, or craftsman workshop?</p>
+        <p class="submit-callout__desc">We actively seek places that are <b>honest, unhurried, culturally rooted, and welcoming</b>. If you know somewhere worth writing about, recommend it to us.</p>
+
+        <div class="submit-types" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 22px;">
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🍵 Local Teahouses &amp; Opera</span>
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">📚 Independent Bookstores</span>
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🧸 Community Art &amp; Healing</span>
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">⚙️ Automata &amp; Craftsmen</span>
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">🎸 Indie Music &amp; Night Jam</span>
+          <span style="font-size: 12px; background: #f3eee4; color: #5a4636; border: 1px solid #e3d8c6; padding: 4px 12px; border-radius: 20px;">☕ Slow Cafe &amp; Atmosphere</span>
+        </div>
+
         <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ Recommend a Place →</button>
       </div>
 
@@ -142,7 +152,7 @@
     <div class="modal-card">
       <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
       <h3 class="modal-title">Recommend a Place</h3>
-      <p class="modal-subtitle">Tell us about your favorite local space, and we'll arrange an honest field visit.</p>
+      <p class="modal-subtitle">We look for: Local teahouses, indie bookstores, community art, kinetic crafts, live music, and slow cafes.</p>
       
       <form onsubmit="handleFormSubmit(event)">
         <div class="form-group">

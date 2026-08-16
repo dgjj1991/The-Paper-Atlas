@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家吧 JahBar · 成都旅行白皮书 — The Paper Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  :root{
+    --reggae-red:#d7263d;
+    --reggae-yellow:#f6c90e;
+    --reggae-green:#2a9d5a;
+    --night:#15131f;
+    --night-2:#1f1b2e;
+    --ink:#2b2636;
+    --muted:#6b6478;
+    --paper:#fbf7f0;
+    --card:#ffffff;
+    --line:#e7e0d4;
+    --accent:#d7263d;
+  }
+  body{
+    font-family:"Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+    background:var(--paper);color:var(--ink);line-height:1.75;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px 80px;}
+
+  /* HERO */
+  .hero-jahbar{
+    background:linear-gradient(135deg,#15131f 0%,#2a1730 45%,#3a1230 100%);
+    color:#fff;padding:54px 24px 46px;position:relative;overflow:hidden;
+    border-bottom:4px solid var(--reggae-yellow);
+  }
+  .hero-jahbar::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(215,38,61,.35) 0 33.33%,rgba(246,201,14,.30) 33.33% 66.66%,rgba(42,157,90,.32) 66.66% 100%);
+    mix-blend-mode:screen;opacity:.45;
+  }
+  .hero-jahbar .inner{position:relative;max-width:920px;margin:0 auto;}
+  .kicker{
+    display:inline-block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--reggae-yellow);border:1px solid rgba(246,201,14,.5);
+    padding:5px 14px;border-radius:30px;margin-bottom:18px;font-family:var(--font-sans);
+  }
+  .hero-jahbar h1{font-size:clamp(36px, 6vw, 52px);font-weight:800;letter-spacing:.02em;line-height:1.15;color:#fff;}
+  .hero-jahbar h1 small{display:block;font-size:18px;font-weight:500;color:#cfc6e0;margin-top:12px;letter-spacing:.05em;}
+  .hero-jahbar p.lead{margin-top:18px;max-width:680px;color:#e7dfe6;font-size:16px;line-height:1.8;}
+
+  /* SNAPSHOT CARD */
+  .snap{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 12px 30px rgba(40,20,40,.10);
+    margin:-34px auto 0;padding:24px 26px;display:grid;
+    grid-template-columns:repeat(4,1fr);gap:18px;position:relative;max-width:880px;
+    font-family:var(--font-sans);
+  }
+  .snap .item .k{font-size:12px;color:var(--muted);letter-spacing:.05em;}
+  .snap .item .v{font-size:15px;font-weight:700;margin-top:3px;color:var(--ink);}
+  .snap .item .v span{color:var(--accent);}
+
+  section{margin-top:48px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .sec-num{
+    flex:none;width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,var(--reggae-red),#a01330);
+    color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-sans);
+  }
+  .sec-head h2{font-size:24px;font-weight:800;letter-spacing:.01em;}
+  .sec-head .en{font-size:12px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-family:var(--font-sans);}
+
+  p{margin-bottom:14px;font-size:16px;color:#3a3450;}
+  .hl{background:linear-gradient(transparent 62%,rgba(246,201,14,.45) 62%);font-weight:600;padding:0 2px;}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:16px;
+  }
+  .card h3{font-size:17px;margin-bottom:8px;color:var(--ink);}
+  .card h3::before{content:"▎";color:var(--reggae-green);margin-right:6px;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14.5px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line);font-family:var(--font-sans);}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
+  th{background:#f4eee2;font-weight:700;color:#4a4360;font-size:13.5px;letter-spacing:.03em;}
+  td .price{color:var(--accent);font-weight:700;}
+
+  .tl{position:relative;padding-left:26px;margin-top:10px;}
+  .tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--reggae-red),var(--reggae-green));}
+  .tl .ev{position:relative;margin-bottom:18px;}
+  .tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--reggae-yellow);border:2px solid #fff;box-shadow:0 0 0 2px var(--reggae-red);}
+  .tl .yr{font-weight:800;color:var(--accent);font-size:15px;font-family:var(--font-sans);}
+  .tl .tx{font-size:14.5px;color:#46405a;}
+
+  .callout{border-radius:12px;padding:14px 18px;margin:16px 0;font-size:14.5px;border-left:4px solid;}
+  .callout.tip{background:#eef7f1;border-color:var(--reggae-green);color:#235c3e;}
+  .callout.warn{background:#fdf0f1;border-color:var(--reggae-red);color:#8c2030;}
+  .callout.info{background:#eef2fb;border-color:#5a78c9;color:#2d3f6b;}
+
+  .route{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .route li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .route li:last-child{border-bottom:none;}
+  .route li b{color:var(--accent);flex:none;font-family:var(--font-sans);}
+
+  @media(max-width:680px){
+    .snap{grid-template-columns:repeat(2,1fr);}
+    .grid2{grid-template-columns:1fr;}
+    .hero-jahbar h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Global Nav -->
+  <nav class="global-nav">
+    <div class="container">
+      <a href="index.html">
+        <span>← 返回中文专栏列表</span>
+      </a>
+      <div class="global-nav__links">
+        <a href="../index.html">Atlas 首页</a>
+        <a href="../en/jahbar.html">English Guide →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-jahbar">
+    <div class="inner">
+      <span class="kicker">The Paper Atlas · 成都文化旅行白皮书</span>
+      <h1>家吧 JahBar
+        <small>成都南河边的一间“音乐之家” · 雷鬼三色旗下，不收场地费的 Live & Jam 酒吧</small>
+      </h1>
+      <p class="lead">它不像专业 Live House 那样讲究声光电，却用近 20 年的人情味，成了成都地下音乐人和乐迷共同的“家”。点一杯酒，坐在南河边，听来自世界各地的乐手即兴 jam——“让每个离乡的人，在成都找到像家一样的地方”。</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SNAPSHOT -->
+    <div class="snap">
+      <div class="item"><div class="k">它是什么</div><div class="v">音乐酒吧 · <span>Jam 现场</span></div></div>
+      <div class="item"><div class="k">创立</div><div class="v"><span>2007</span> 年 · 近20年</div></div>
+      <div class="item"><div class="k">位置</div><div class="v">武侯区 <span>黉门街36-18</span></div></div>
+      <div class="item"><div class="k">人均</div><div class="v">约 <span>¥40–62</span></div></div>
+    </div>
+
+    <!-- 01 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">01</div><div><h2>它是什么</h2><div class="en">WHAT IT IS</div></div></div>
+      <div class="card">
+        <p><span class="hl">家吧（JahBar）</span>是成都市武侯区一家兼具 Live House 与酒吧功能的<b>音乐主题酒吧</b>，2007 年创立，位于老南门大桥旁的黉门街、南河（临江西路）边，正对“万里号”游船。</p>
+        <p>它的自我定位很特别：<b>本质上不是现代专业 Live House，而是一个以 live、jam 为主的酒吧</b>。主理人燕子说，家吧“从来不收场地费、门票收入全部归乐队”，在当下演出市场里足够特别。</p>
+        <p>文化内核是<span class="hl">雷鬼（Reggae）</span>——门口那面红黄绿三色旗就是它的 logo。对乐队风格不设限，朋克、嘻哈、爵士、雷鬼、民谣都能上台。</p>
+        <div class="callout info">一句话：想感受成都本土音乐氛围、又不想被商业 Live House 的票价和距离感劝退，家吧是“人情味”的代名词。</div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">02</div><div><h2>来龙去脉</h2><div class="en">THE STORY</div></div></div>
+      <div class="card">
+        <p><b>2007 年，老李（川北人）创办家吧。</b>他早年玩重型乐队，当过“主吼”兼吉他手，也组过 reggae、ska punk 和冲浪乐队。开店初衷很朴素：<span class="hl">“成都生活着很多远离故乡的人，希望每个人都能在这座城市中找到像家一样的地方。”</span></p>
+        <p>主理团队包括创始人<b>朱姐</b>、主理人<b>燕子</b>与<b>图图</b>。近 20 年里，家吧始终坚持对<b>所有乐队及各种形式的演出无偿支持</b>，保持早期传统 Live House 纯粹的样子——场地不抽成、舞台开放、平日免费。</p>
+        <p>它还在<b>海南三亚海棠湾后海村</b>开了一家分店，推广冲浪、滑板与旅游文化，把成都玩不到的东西搬去海边。</p>
+      </div>
+      <div class="tl">
+        <div class="ev"><div class="yr">2007</div><div class="tx">老李在老南门大桥黉门街创办家吧，红黄绿雷鬼三色旗亮起。</div></div>
+        <div class="ev"><div class="yr">2017</div><div class="tx">十周年，已是成都本土独立音乐人公认的聚集地。</div></div>
+        <div class="ev"><div class="yr">2019</div><div class="tx">十二周年店庆（4.25–4.27），JahWahZoo、街娃等乐队登台。</div></div>
+        <div class="ev"><div class="yr">2024+</div><div class="tx">十七年+，依旧“半自助”、不收场地费、门票全归乐队。</div></div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">03</div><div><h2>空间与氛围</h2><div class="en">SPACE & VIBE</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>室内：中央舞台 + 包围式卡座</h3>
+          <p>数十平米的方形空间，沿壁的吧台、卡座把中央舞台紧紧包围。绯红 LED 灯条打底，墙上贴满乐手与乐迷的合照，顶棚挂着代表店铺的三色旗，吉他、非洲鼓围摆在舞台周边——乐手与观众之间几乎“零屏障”。</p>
+        </div>
+        <div class="card">
+          <h3>室外：南河边露天坐席</h3>
+          <p>4–5 桌露天位，配桌上足球和简易音响。坐在门口能清晰听见<b>身前南河流水与身后音乐</b>缠绵交错，像一场自带自然采样的即兴现场。认识不认识的人拼一桌，来瓶啤酒就成朋友。</p>
+        </div>
+      </div>
+      <div class="callout tip">装修低调粗犷、怀旧，服务是“半自助”——自己选酒、自己到吧台结账。这种松弛感，恰恰是家吧的味道。</div>
+    </section>
+
+    <!-- 04 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">04</div><div><h2>有什么好玩</h2><div class="en">WHAT TO DO</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>每晚即兴 Jam（金字招牌）</h3>
+          <p>每晚都有乐手到台上即兴演绎，朋克、嘻哈、爵士、雷鬼、民谣风格包罗万有。乐迷与乐手咫尺相对，绯红灯下尽情互动。</p>
+        </div>
+        <div class="card">
+          <h3>每月 5–6 场专场</h3>
+          <p>集中在<b>周五、周六夜间</b>；平日无专场时向顾客免费开放。曾邀丢莱卡、荷兰 Neuroot、俄罗斯雷鬼 Steppa Style 等。</p>
+        </div>
+        <div class="card">
+          <h3>开放舞台 Open Stage</h3>
+          <p>舞台对所有人开放——只要没和别的档期撞上，谁都可以上去演。免票演出家吧还会送酒给乐队鼓励。</p>
+        </div>
+        <div class="card">
+          <h3>喝酒 · 拼桌 · 社交</h3>
+          <p>黑啤是招牌，冬日有特制热红酒、煮花雕酒。门口炒饭烧烤、桌上足球，是记忆里的一景。一个人来也不会冷场。</p>
+        </div>
+      </div>
+      <div class="callout warn">注意：家吧的声响与舞台设备不算出众，它卖的是人情味和距离感，不是顶级音效。冲着专业音质来的话预期要放低。</div>
+    </section>
+
+    <!-- 05 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">05</div><div><h2>消费参考</h2><div class="en">HOW MUCH</div></div></div>
+      <table>
+        <thead><tr><th>项目</th><th>参考价 / 说明</th></tr></thead>
+        <tbody>
+          <tr><td>人均消费</td><td><span class="price">约 ¥40–62</span>（平价路线）</td></tr>
+          <tr><td>酒水</td><td>瓶啤、鸡尾酒、威士忌、子弹酒；冬日特供热红酒、煮花雕酒</td></tr>
+          <tr><td>招牌</td><td>黑啤（口碑饮品好喝、价格实惠）</td></tr>
+          <tr><td>平日 Jam</td><td>免费开放，不收门票</td></tr>
+          <tr><td>周末专场</td><td>票价多为 <span class="price">¥12–几十元</span>，收入全归乐队</td></tr>
+          <tr><td>服务方式</td><td>“半自助”：落座、点酒、结账自行到柜台</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 06 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">06</div><div><h2>实用攻略</h2><div class="en">PRACTICAL INFO</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>地址 & 交通</h3>
+          <p><b>地址：</b>成都市武侯区老南门大桥黉门街 36-18 号（临江西路，南河边，万里号对面）。</p>
+          <p><b>地铁：</b>10 号线文翁石室站（三期）；近华西医院。</p>
+        </div>
+        <div class="card">
+          <h3>营业 & 联系</h3>
+          <p><b>营业时间：</b>约 <b>19:30 – 次日 03:00</b>（深夜场为主，白天不开放）。</p>
+          <p><b>公众号：</b>JahbarMessage（看最新演出排期与售票）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">07</div><div><h2>一夜行程建议</h2><div class="en">A NIGHT THERE</div></div></div>
+      <ul class="route">
+        <li><b>19:30</b><span>到店先占室外南河边一桌，点杯黑啤/热红酒，听水声与远处琴声。</span></li>
+        <li><b>20:30</b><span>进场围坐中央舞台，看乐手 Jam 或当晚专场，和邻座拼桌聊天。</span></li>
+        <li><b>22:00</b><span>若遇开放舞台，胆大的可自己上去唱一首；场外桌上足球、烧烤续摊。</span></li>
+        <li><b>00:00+</b><span>深夜场渐入佳境，雷鬼彻夜不散；叫好代驾，把“家”的氛围带回家。</span></li>
+      </ul>
+    </section>
+
+    <!-- 08 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">08</div><div><h2>避坑贴士</h2><div class="en">GOOD TO KNOW</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>预期管理</h3>
+          <p>场地小、设备一般，不是专业 Live House；要的是“近”和“真”。</p>
+        </div>
+        <div class="card">
+          <h3>时间 & 服务</h3>
+          <p>只开夜场（约 19:30 起），白天别跑空；半自助需自己到吧台点酒结账。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <p class="footer-title">The Paper Atlas · 中文白皮书</p>
+        <p class="footer-sub">去探索世界，把值得体验的东西留下来。</p>
+      </div>
+      <div class="footer-note">
+        <p>© 2026 The Paper Atlas · 独立调研，客观记录</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

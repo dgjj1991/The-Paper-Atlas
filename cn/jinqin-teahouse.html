@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>成都金琴老茶馆 · 旅行白皮书 — The Paper Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  :root{
+    --bg:#f4efe5;
+    --paper:#fffdf8;
+    --ink:#2b2620;
+    --muted:#6b6155;
+    --accent:#a86b35;
+    --accent-soft:#e6cda6;
+    --green:#5a7d4f;
+    --line:#e6dcc8;
+    --shadow:0 12px 40px rgba(80,60,30,.12);
+  }
+  body{
+    font-family:"Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.9;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  .cover{
+    position:relative;
+    min-height:75vh;
+    display:flex;flex-direction:column;justify-content:center;
+    background:
+      radial-gradient(120% 80% at 80% 10%, rgba(168,107,53,.14), transparent 60%),
+      radial-gradient(100% 70% at 10% 90%, rgba(90,125,79,.12), transparent 55%),
+      var(--paper);
+    padding:60px 24px;overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .cover .stamp{
+    position:absolute;top:48px;right:48px;
+    width:108px;height:108px;border:2px solid var(--accent);border-radius:8px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    color:var(--accent);font-size:15px;letter-spacing:2px;line-height:1.6;
+    transform:rotate(-8deg);opacity:.85;background:rgba(168,107,53,.05);
+  }
+  .cover .eyebrow{color:var(--accent);letter-spacing:6px;font-size:14px;margin-bottom:18px;font-family:var(--font-sans);font-weight:600;}
+  .cover h1{font-size:clamp(38px, 6vw, 64px);line-height:1.15;letter-spacing:4px;margin-bottom:8px;}
+  .cover h1 small{display:block;font-size:20px;letter-spacing:6px;color:var(--muted);margin-top:14px;font-family:var(--font-serif);}
+  .cover .lede{max-width:620px;margin-top:30px;font-size:17.5px;color:var(--muted);line-height:1.8;}
+  .cover .meta{margin-top:48px;font-size:13.5px;color:var(--muted);letter-spacing:1px;font-family:var(--font-sans);}
+  .cover .leaf{position:absolute;bottom:-40px;left:-30px;font-size:220px;opacity:.06;color:var(--green);user-select:none;}
+
+  nav.toc{
+    background:var(--ink);color:#f3ece0;padding:20px 24px;position:sticky;top:0;z-index:99;
+  }
+  nav.toc .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;font-family:var(--font-sans);}
+  nav.toc a{color:#e9dcc6;text-decoration:none;font-size:14px;letter-spacing:0.5px;border-bottom:1px solid transparent;padding-bottom:2px;}
+  nav.toc a:hover{border-color:var(--accent-soft);color:#fff;}
+
+  section{padding:54px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{color:var(--accent);letter-spacing:4px;font-size:12px;margin-bottom:10px;font-family:var(--font-sans);font-weight:700;}
+  h2{font-size:30px;letter-spacing:2px;margin-bottom:8px;position:relative;}
+  h2::after{content:"";display:block;width:48px;height:3px;background:var(--accent);margin-top:12px;}
+  h3{font-size:20px;letter-spacing:1px;margin:30px 0 12px;color:var(--ink);}
+  p{margin:14px 0;font-size:16px;color:#3a342c;}
+  .muted{color:var(--muted);font-size:14.5px;}
+
+  .grid{display:grid;gap:18px;margin-top:24px;}
+  .grid.two{grid-template-columns:1fr 1fr;}
+  .grid.three{grid-template-columns:repeat(3,1fr);}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;
+    box-shadow:0 4px 18px rgba(120,90,40,.06);
+  }
+  .card .no{color:var(--accent);font-size:12px;letter-spacing:2px;font-family:var(--font-sans);font-weight:700;}
+  .card h4{font-size:17px;margin:6px 0 8px;letter-spacing:1px;}
+  .card p{font-size:14px;margin:0;color:var(--muted);line-height:1.7;}
+
+  blockquote{
+    margin:28px 0;padding:22px 28px;border-left:4px solid var(--accent);
+    background:linear-gradient(90deg,rgba(168,107,53,.08),transparent);
+    font-size:18px;font-style:italic;color:#463d31;border-radius:0 10px 10px 0;
+  }
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;color:var(--muted);font-family:var(--font-sans);}
+
+  table{width:100%;border-collapse:collapse;margin-top:20px;font-size:14.5px;font-family:var(--font-sans);}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
+  th{background:rgba(168,107,53,.10);color:var(--accent);letter-spacing:1px;font-weight:600;}
+  tr:hover td{background:rgba(168,107,53,.04);}
+
+  .stats{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;}
+  .stat{flex:1;min-width:130px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center;}
+  .stat b{display:block;font-size:28px;color:var(--accent);letter-spacing:1px;font-family:var(--font-sans);}
+  .stat span{font-size:13px;color:var(--muted);font-family:var(--font-sans);}
+
+  .tl{margin-top:22px;border-left:2px solid var(--accent-soft);padding-left:22px;}
+  .tl li{list-style:none;position:relative;margin:16px 0;font-size:15px;}
+  .tl li::before{content:"";position:absolute;left:-28px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);}
+  .tl b{color:var(--accent);font-family:var(--font-sans);}
+
+  .tips{background:rgba(90,125,79,.10);border:1px solid rgba(90,125,79,.3);border-radius:12px;padding:22px 24px;margin-top:22px;}
+  .tips h3{color:var(--green);margin-top:0;}
+  .tips li{margin:8px 0;font-size:14.5px;}
+
+  @media(max-width:760px){
+    .cover h1{font-size:38px;}
+    .grid.two,.grid.three{grid-template-columns:1fr;}
+    nav.toc .wrap{font-size:12px;gap:8px 14px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Global Nav -->
+  <nav class="global-nav">
+    <div class="container">
+      <a href="index.html">
+        <span>← 返回中文专栏列表</span>
+      </a>
+      <div class="global-nav__links">
+        <a href="../index.html">Atlas 首页</a>
+        <a href="../en/jinqin-teahouse.html">English Guide →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="stamp">听琴声<br/>品人生</div>
+    <div class="wrap">
+      <div class="eyebrow">THE PAPER ATLAS · 成都文化旅行白皮书</div>
+      <h1>金琴老茶馆<small>JINQIN OLD TEA HOUSE</small></h1>
+      <p class="lede">一座从川北“整抬”而来的清代老宅，天井漏下光，老虎灶咕嘟着铜壶。十元盖碗茶，免费看京剧——这是被成都人称为“成都版观音阁”的市井精神客厅。</p>
+      <div class="meta">实地记录 · 目的地：成都市金牛区 · 抚琴西南路（地铁 5 号线抚琴站）</div>
+    </div>
+    <div class="leaf">茶</div>
+  </header>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="wrap">
+      <a href="#about">01 它是什么</a>
+      <a href="#story">02 来龙去脉</a>
+      <a href="#space">03 空间与建筑</a>
+      <a href="#fun">04 有什么好玩</a>
+      <a href="#cost">05 消费参考</a>
+      <a href="#guide">06 实用攻略</a>
+      <a href="#trip">07 一日行程建议</a>
+      <a href="#tips">08 避坑与贴士</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <!-- 01 -->
+    <section id="about">
+      <div class="kicker">CHAPTER 01</div>
+      <h2>它是什么</h2>
+      <p><strong>京韵金琴老茶馆</strong>是位于成都金牛区抚琴片区的一间社区老茶馆，2024 年 9 月 8 日正式开业。它常被网友称作<strong>“成都版观音阁”</strong>——水桶粗的木柱、青砖黛瓦、半露天的天井、老虎灶上咕嘟冒气的铜壶。</p>
+      <p>但它的“老”很特别：茶馆本身很新，<strong>建筑却真老</strong>。主体是一栋从南充市西充县“整抬”（整体搬迁）而来的<strong>清代木构老宅</strong>，据传始建清乾隆年间，距今 300 余年；因修高速面临拆除，被完整迁至成都以传统榫卯工艺复建。约 500 平方米，以天井为界分前后两厅。</p>
+      <p>它由<strong>成都京剧团（成都市京剧研究院）与抚琴街道</strong>联合打造，喝茶即可<strong>免费看京剧、川剧、评书</strong>——上承风雅，下接地气，是烟火成都最纯正的慢生活样本。</p>
+
+      <div class="stats">
+        <div class="stat"><b>2024.9</b><span>开业时间</span></div>
+        <div class="stat"><b>4.8</b><span>大众点评评分</span></div>
+        <div class="stat"><b>¥18</b><span>人均消费参考</span></div>
+        <div class="stat"><b>300+</b><span>古建树龄与年份</span></div>
+      </div>
+
+      <blockquote>
+        “成都人活在茶馆里，正如年轻人住在互联网上。”
+        <cite>—— 历史学家 王笛</cite>
+      </blockquote>
+    </section>
+
+    <!-- 02 -->
+    <section id="story">
+      <div class="kicker">CHAPTER 02</div>
+      <h2>来龙去脉</h2>
+      <p>金琴老茶馆的前身是抚琴小区里一处半露天的老旧坝坝茶馆。2024 年初，由金牛区政协推动改造，<strong>抚琴街道办提供场地、成都京剧团出资 200 多万元</strong>，搜罗购置明清木质结构老建筑构件异地重建。</p>
+      <p>这栋老宅原在南充西充县农村，因高速公路建设面临拆除，被抢救式整体迁建到成都市区。青砖黛瓦、木梁穿斗，斑驳里全是岁月的包浆。茶客脚下踩着的是踩了上百年的“千脚泥”，旁边是燃着蜂窝煤的“老虎灶”。</p>
+
+      <h3>关键发展节点</h3>
+      <ul class="tl">
+        <li><b>清乾隆年间</b>　原建筑始建于川北（今南充西充），距今 300 余年。</li>
+        <li><b>2023</b>　老宅因修路面临拆除，被整体抢救搬迁至成都。</li>
+        <li><b>2024.09.08</b>　京韵金琴老茶馆正式开业，由成都京剧团与街道联合运营。</li>
+        <li><b>常态化演出</b>　每周二至周五下午 3 点固定京剧专场，青年名家现场演出。</li>
+      </ul>
+    </section>
+
+    <!-- 03 -->
+    <section id="space">
+      <div class="kicker">CHAPTER 03</div>
+      <h2>空间与建筑</h2>
+      <p>茶馆以一方<strong>传统川西天井</strong>为核心，分前后两厅：前厅由 16 根老木柱撑起，阳光从亮瓦倾泻而下；后厅中心是一座<strong>红绸轻垂的戏台</strong>，左手洗手间、右手话事堂，格局开朗通透。</p>
+
+      <h3>被岁月包浆的细节</h3>
+      <div class="grid three">
+        <div class="card"><div class="no">天井</div><h4>呼吸感茶位</h4><p>晴天光斑落在竹椅与茶客肩头；雨天坐廊下听雨打瓦片、看水成帘。</p></div>
+        <div class="card"><div class="no">老虎灶</div><h4>百年老灶铜壶</h4><p>燃着蜂窝煤的老虎灶，铁皮烟囱通向屋顶，几把大铜壶咕嘟咕嘟冒热气。</p></div>
+        <div class="card"><div class="no">千脚泥</div><h4>踩亮的地坪</h4><p>地面是被无数茶客鞋底打磨百年、泛着温润光泽的千脚泥地坪。</p></div>
+        <div class="card"><div class="no">竹靠椅</div><h4>八仙桌与竹编</h4><p>老式竹编靠背椅、八仙桌、竹编保温瓶，原汁原味的老成都坐具。</p></div>
+        <div class="card"><div class="no">戏台</div><h4>后厅舞台</h4><p>红绸木台，专业戏曲演员在此献演京剧与川剧折子戏。</p></div>
+        <div class="card"><div class="no">墙饰</div><h4>民乐器与告示</h4><p>墙上挂二胡、琵琶、戏服与“听琴声，品人生”红纸告示。</p></div>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="fun">
+      <div class="kicker">CHAPTER 04</div>
+      <h2>有什么好玩</h2>
+      <div class="grid two">
+        <div class="card"><div class="no">玩点 01</div><h4>盖碗茶发呆</h4><p>素毛峰、花毛峰 10 元起，保温壶自助无限续开水，坐一天不心疼。</p></div>
+        <div class="card"><div class="no">玩点 02</div><h4>免费看京剧专场</h4><p>每周二至周五下午 3:00，成都市京剧团青年演员演出《贵妃醉酒》《拾玉镯》等。</p></div>
+        <div class="card"><div class="no">玩点 03</div><h4>川剧与曲艺加演</h4><p>不定期川剧变脸、金钱板、评书与清音，台下票友击节附和。</p></div>
+        <div class="card"><div class="no">玩点 04</div><h4>雨天听雨</h4><p>雨落天井水成珠帘，人少清幽，是成都茶馆最被低估的松弛打开方式。</p></div>
+        <div class="card"><div class="no">玩点 05</div><h4>市井小吃配茶</h4><p>师傅自创怪味凉面、炸酱面约 10 元；叶儿粑、麻花与花生拼盘配茶绝佳。</p></div>
+        <div class="card"><div class="no">玩点 06</div><h4>老成都摆龙门阵</h4><p>本地茶客为主，打牌、看报、聊天。拼座自然，落座即是街坊。</p></div>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section id="cost">
+      <div class="kicker">CHAPTER 05</div>
+      <h2>消费参考</h2>
+      <p>极致性价比。一杯茶即可久坐一天，人均消费约 <strong>¥18</strong>；看戏完全免费。</p>
+
+      <table>
+        <thead><tr><th>项目</th><th>参考价</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>素毛峰 / 花毛峰 / 茉莉花</td><td>¥10 / 杯</td><td>最经典盖碗茶，开水无限续</td></tr>
+          <tr><td>碧潭飘雪 / 普洱</td><td>¥15–20 / 杯</td><td>茶香更浓郁</td></tr>
+          <tr><td>竹叶青 / 蒙顶甘露</td><td>¥20 / 杯</td><td>优质绿茶</td></tr>
+          <tr><td>老人优惠（60 岁以上）</td><td>上午半价</td><td>早 8:00–11:00 时段 5 折</td></tr>
+          <tr><td>简餐小吃（面条、叶儿粑）</td><td>¥10 左右</td><td>地道管饱</td></tr>
+          <tr><td>戏曲与表演</td><td>免费</td><td>喝茶免费观赏，无需购票</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 06 -->
+    <section id="guide">
+      <div class="kicker">CHAPTER 06</div>
+      <h2>实用攻略</h2>
+      <div class="grid two">
+        <div class="card"><div class="no">地址</div><h4>抚琴西南路 6 号附 3 号</h4><p>成都市金牛区抚琴街道金琴南路社区 · 紧邻新声剧场。</p></div>
+        <div class="card"><div class="no">交通</div><h4>地铁 5 号线抚琴站</h4><p>B1 口出步行约 300 米即达。</p></div>
+        <div class="card"><div class="no">营业时间</div><h4>约 08:00–18:00</h4><p>下午 2 点后上客高峰；京剧专场通常为周二至周五 15:00。</p></div>
+        <div class="card"><div class="no">周边联游</div><h4>抚琴夜市</h4><p>步行 5 分钟可达抚琴夜市，蛋烘糕、甜水面、串串扫街。</p></div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="trip">
+      <div class="kicker">CHAPTER 07</div>
+      <h2>一日行程建议</h2>
+      <ul class="tl">
+        <li><b>09:30</b>　地铁抚琴站 B1 口出，找天井竹椅点杯茉莉花，看晨光透过亮瓦。</li>
+        <li><b>10:30</b>　近距离欣赏老虎灶大铜壶、千脚泥与古建木构雕花。</li>
+        <li><b>12:00</b>　来一碗师傅自创怪味凉面或炸酱面，配热茶解腻。</li>
+        <li><b>14:30</b>　占戏台前排茶座，等 15:00 京剧水袖开演。</li>
+        <li><b>17:30</b>　散步至抚琴夜市，扫街打卡地道小吃。</li>
+      </ul>
+    </section>
+
+    <!-- 08 -->
+    <section id="tips">
+      <div class="kicker">CHAPTER 08</div>
+      <h2>避坑与贴士</h2>
+      <div class="tips">
+        <h3>出发前要点</h3>
+        <ul>
+          <li><span class="tag">演出</span> 周二至周五 15:00 固定有戏；周末多为不定期加演，建议提前确认。</li>
+          <li><span class="tag">占座</span> 下午看戏茶客较多，建议 14:00 前到店占座。</li>
+          <li><span class="tag">拼桌</span> 拼桌是老茶馆传统礼仪，自然落座交流即可。</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <p class="footer-title">The Paper Atlas · 中文白皮书</p>
+        <p class="footer-sub">去探索世界，把值得体验的东西留下来。</p>
+      </div>
+      <div class="footer-note">
+        <p>© 2026 The Paper Atlas · 独立调研，客观记录</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

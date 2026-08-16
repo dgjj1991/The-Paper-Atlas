@@ -127,10 +127,82 @@
 
       </div>
 
-      <p class="more-coming">More places coming soon. Been somewhere worth writing about? Tell us.</p>
+      <!-- Submission Callout Box -->
+      <div class="submit-callout">
+        <h3 class="submit-callout__title">More Cities &amp; Spaces Coming Soon</h3>
+        <p class="submit-callout__desc">Been somewhere worth writing about? Know a local teahouse, hidden bookstore, or craftsman workshop?</p>
+        <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ Recommend a Place →</button>
+      </div>
 
     </div>
   </main>
+
+  <!-- Interactive Submission Modal -->
+  <div id="submitModal" class="modal-overlay" onclick="if(event.target===this) toggleSubmitModal(false)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
+      <h3 class="modal-title">Recommend a Place</h3>
+      <p class="modal-subtitle">Tell us about your favorite local space, and we'll arrange an honest field visit.</p>
+      
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>Place / Destination Name *</label>
+          <input type="text" id="spaceName" required placeholder="e.g. Youxing Bookstore / Local Teahouse">
+        </div>
+        <div class="form-group">
+          <label>City / District *</label>
+          <input type="text" id="spaceLocation" required placeholder="e.g. Chengdu · Chenghua District">
+        </div>
+        <div class="form-group">
+          <label>Why Should We Visit?</label>
+          <textarea id="spaceReason" placeholder="What makes this place special? What's the story or vibe?"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Your Contact (Instagram / Email / WeChat)</label>
+          <input type="text" id="contactInfo" placeholder="Optional — to keep you updated">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Send Email Recommendation →</button>
+          <button type="button" onclick="copyFormContent()" class="btn-secondary">Copy Recommendation Text</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmitModal(show) {
+      const modal = document.getElementById('submitModal');
+      if (show) modal.classList.add('active');
+      else modal.classList.remove('active');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('spaceName').value;
+      const location = document.getElementById('spaceLocation').value;
+      const reason = document.getElementById('spaceReason').value;
+      const contact = document.getElementById('contactInfo').value;
+
+      const subject = encodeURIComponent(`[The Paper Atlas Recommendation] ${name} (${location})`);
+      const body = encodeURIComponent(`Destination: ${name}\nLocation: ${location}\nWhy visit:\n${reason}\n\nContact: ${contact}`);
+      
+      window.location.href = `mailto:dgjj1991@gmail.com?subject=${subject}&body=${body}`;
+      alert('Thank you for your recommendation!');
+      toggleSubmitModal(false);
+    }
+
+    function copyFormContent() {
+      const name = document.getElementById('spaceName').value || 'N/A';
+      const location = document.getElementById('spaceLocation').value || 'N/A';
+      const reason = document.getElementById('spaceReason').value || 'N/A';
+      const contact = document.getElementById('contactInfo').value || 'N/A';
+
+      const text = `[The Paper Atlas Recommendation]\nPlace: ${name}\nLocation: ${location}\nWhy visit: ${reason}\nContact: ${contact}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Recommendation copied to clipboard!');
+      });
+    }
+  </script>
 
   <!-- Footer -->
   <footer class="footer">

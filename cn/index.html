@@ -246,10 +246,82 @@
 
       </div>
 
-      <p class="more-coming">更多城市与空间持续收录中。如果你知道哪里值得被写下来，欢迎告诉我们。</p>
+      <!-- Submission Callout Box -->
+      <div class="submit-callout">
+        <h3 class="submit-callout__title">更多城市与空间持续收录中</h3>
+        <p class="submit-callout__desc">如果你知道哪里值得被写下来，欢迎向我们推荐。无论是老茶馆、独立书店还是隐秘手作工坊。</p>
+        <button onclick="toggleSubmitModal(true)" class="submit-callout__btn">✨ 推荐一个值得留下的空间 →</button>
+      </div>
 
     </div>
   </main>
+
+  <!-- Interactive Submission Modal -->
+  <div id="submitModal" class="modal-overlay" onclick="if(event.target===this) toggleSubmitModal(false)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="toggleSubmitModal(false)">&times;</button>
+      <h3 class="modal-title">推荐一个值得留下的空间</h3>
+      <p class="modal-subtitle">告诉我们你喜爱的空间或地方，我们将安排实地走访与深度调研。</p>
+      
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>空间 / 目的地名称 *</label>
+          <input type="text" id="spaceName" required placeholder="例如：成都有杏书店 / 某某老茶馆">
+        </div>
+        <div class="form-group">
+          <label>所在城市 / 区域 *</label>
+          <input type="text" id="spaceLocation" required placeholder="例如：成都 · 成华区 / 二仙桥">
+        </div>
+        <div class="form-group">
+          <label>推荐理由 / 你的体验故事</label>
+          <textarea id="spaceReason" placeholder="为什么觉得这里值得被写下来？这里有什么独特的切片或体验？"></textarea>
+        </div>
+        <div class="form-group">
+          <label>你的联系方式（小红书 / 微信 / 邮箱）</label>
+          <input type="text" id="contactInfo" placeholder="选填，方便我们向你反馈收录进展">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">发送推荐邮件 →</button>
+          <button type="button" onclick="copyFormContent()" class="btn-secondary">一键复制推荐文本</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmitModal(show) {
+      const modal = document.getElementById('submitModal');
+      if (show) modal.classList.add('active');
+      else modal.classList.remove('active');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('spaceName').value;
+      const location = document.getElementById('spaceLocation').value;
+      const reason = document.getElementById('spaceReason').value;
+      const contact = document.getElementById('contactInfo').value;
+
+      const subject = encodeURIComponent(`[The Paper Atlas 空间推荐] ${name} (${location})`);
+      const body = encodeURIComponent(`目的地名称：${name}\n所在城市/区域：${location}\n推荐理由/故事：\n${reason}\n\n推荐人联系方式：${contact}`);
+      
+      window.location.href = `mailto:dgjj1991@gmail.com?subject=${subject}&body=${body}`;
+      alert('感谢你的推荐！已为你调起邮件发送框。');
+      toggleSubmitModal(false);
+    }
+
+    function copyFormContent() {
+      const name = document.getElementById('spaceName').value || '未填名称';
+      const location = document.getElementById('spaceLocation').value || '未填位置';
+      const reason = document.getElementById('spaceReason').value || '未填理由';
+      const contact = document.getElementById('contactInfo').value || '未填联系方式';
+
+      const text = `【The Paper Atlas 空间推荐】\n目的地：${name}\n位置：${location}\n推荐理由：${reason}\n联系方式：${contact}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('推荐文本已复制到剪贴板！可以直接发送在小红书私信或邮件中。');
+      });
+    }
+  </script>
 
   <!-- Footer -->
   <footer class="footer">

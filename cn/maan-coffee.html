@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>漫咖啡（锦江店）· 成都旅行白皮书 — The Paper Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  :root{
+    --coffee:#6f4e37;
+    --coffee-dark:#4a3325;
+    --gold:#c8943f;
+    --gold-soft:#e0b873;
+    --sage:#5a7d52;
+    --cream:#f7f1e6;
+    --ink:#3a2e25;
+    --muted:#8a7a6a;
+    --line:#e3d8c6;
+    --paper:#fffdf9;
+    --accent:#6f4e37;
+  }
+  body{
+    font-family:"Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+    background:var(--cream);color:var(--ink);line-height:1.8;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px 80px;}
+
+  .hero-maan{
+    background:linear-gradient(135deg,#33241a 0%,#5a3f2c 50%,#7a5232 100%);
+    color:#fdf6ea;padding:54px 24px 46px;position:relative;overflow:hidden;
+    border-bottom:4px solid var(--gold);
+  }
+  .hero-maan::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 78% 22%,rgba(200,148,63,.35),transparent 45%),
+               radial-gradient(circle at 18% 80%,rgba(90,125,82,.22),transparent 40%);
+  }
+  .hero-maan .inner{position:relative;max-width:920px;margin:0 auto;}
+  .kicker{
+    display:inline-block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold-soft);border:1px solid rgba(224,184,115,.5);
+    padding:5px 14px;border-radius:30px;margin-bottom:18px;font-family:var(--font-sans);
+  }
+  .hero-maan h1{font-size:clamp(36px, 6vw, 50px);font-weight:800;letter-spacing:.02em;line-height:1.15;color:#fdf6ea;}
+  .hero-maan h1 small{display:block;font-size:18px;font-weight:500;color:#e9d8c0;margin-top:12px;letter-spacing:.05em;}
+  .hero-maan p.lead{margin-top:18px;max-width:680px;color:#efe2cf;font-size:16px;line-height:1.8;}
+
+  .snap{
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 12px 30px rgba(60,40,20,.12);
+    margin:-34px auto 0;padding:24px 26px;display:grid;
+    grid-template-columns:repeat(4,1fr);gap:18px;position:relative;max-width:880px;
+    font-family:var(--font-sans);
+  }
+  .snap .item .k{font-size:12px;color:var(--muted);letter-spacing:.05em;}
+  .snap .item .v{font-size:15px;font-weight:700;margin-top:3px;color:var(--ink);}
+  .snap .item .v span{color:var(--coffee);}
+
+  section{margin-top:48px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .sec-num{
+    flex:none;width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,var(--coffee),var(--coffee-dark));
+    color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-sans);
+  }
+  .sec-head h2{font-size:24px;font-weight:800;letter-spacing:.01em;}
+  .sec-head .en{font-size:12px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-family:var(--font-sans);}
+
+  p{margin-bottom:14px;font-size:16px;color:#463829;}
+  .hl{background:linear-gradient(transparent 62%,rgba(200,148,63,.40) 62%);font-weight:600;padding:0 2px;}
+
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:16px;
+  }
+  .card h3{font-size:17px;margin-bottom:8px;color:var(--ink);}
+  .card h3::before{content:"▎";color:var(--gold);margin-right:6px;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14.5px;background:var(--paper);border-radius:12px;overflow:hidden;border:1px solid var(--line);font-family:var(--font-sans);}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
+  th{background:#f1e7d6;font-weight:700;color:#5a4636;font-size:13.5px;letter-spacing:.03em;}
+  td .price{color:var(--coffee);font-weight:700;}
+
+  .tl{position:relative;padding-left:26px;margin-top:10px;}
+  .tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--sage));}
+  .tl .ev{position:relative;margin-bottom:18px;}
+  .tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--gold-soft);border:2px solid #fff;box-shadow:0 0 0 2px var(--coffee);}
+  .tl .yr{font-weight:800;color:var(--coffee);font-size:15px;font-family:var(--font-sans);}
+  .tl .tx{font-size:14.5px;color:#534231;}
+
+  .callout{border-radius:12px;padding:14px 18px;margin:16px 0;font-size:14.5px;border-left:4px solid;}
+  .callout.tip{background:#eef4ea;border-color:var(--sage);color:#36502f;}
+  .callout.warn{background:#fbf0e6;border-color:var(--gold);color:#8a5a26;}
+  .callout.info{background:#f3eee4;border-color:#a98c63;color:#5a4636;}
+
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .route li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .route li:last-child{border-bottom:none;}
+  .route li b{color:var(--coffee);flex:none;font-family:var(--font-sans);}
+
+  @media(max-width:680px){
+    .snap{grid-template-columns:repeat(2,1fr);}
+    .grid2{grid-template-columns:1fr;}
+    .hero-maan h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Global Nav -->
+  <nav class="global-nav">
+    <div class="container">
+      <a href="index.html">
+        <span>← 返回中文专栏列表</span>
+      </a>
+      <div class="global-nav__links">
+        <a href="../index.html">Atlas 首页</a>
+        <a href="../en/maan-coffee.html">English Guide →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-maan">
+    <div class="inner">
+      <span class="kicker">The Paper Atlas · 成都文化旅行白皮书</span>
+      <h1>漫咖啡 锦江店
+        <small>Maan Coffee · 人民南路三段的韩式“慢”咖啡空间 · 招牌松饼与泰迪熊送餐</small>
+      </h1>
+      <p class="lead">它不算精品咖啡，却是那种你愿意“浪费”一下午的地方——挑高落地窗、老榆木与绿植、端着松饼的泰迪熊、一杯可以续很久的拿铁。在快节奏的城市里，漫咖啡卖的从来不是咖啡因，而是一段允许你慢下来的时间。</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SNAPSHOT -->
+    <div class="snap">
+      <div class="item"><div class="k">它是什么</div><div class="v">韩式慢生活 <span>咖啡简餐</span></div></div>
+      <div class="item"><div class="k">创立</div><div class="v">品牌 <span>2011</span></div></div>
+      <div class="item"><div class="k">位置</div><div class="v">武侯区 <span>人民南路三段1号</span></div></div>
+      <div class="item"><div class="k">人均</div><div class="v">约 <span>¥37–46</span></div></div>
+    </div>
+
+    <!-- 01 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">01</div><div><h2>它是什么</h2><div class="en">WHAT IT IS</div></div></div>
+      <div class="card">
+        <p><span class="hl">漫咖啡（Maan Coffee）</span>是一个 2011 年推出的韩式慢生活咖啡连锁品牌，锦江店是它在成都的一家分店，位于人民南路三段、锦江宾馆背后、南门大桥与华西坝之间的盛捷江畔服务公寓底商。</p>
+        <p>品牌名里的“漫”取自“浪漫”的漫，也指向<b>缓慢、悠然</b>——它想在传统咖啡“买了就走”的效率逻辑之外，提供一个可以久坐、聊天、发呆、办公的<b>“第三空间”</b>（非家非职场）。</p>
+        <p>锦江店延续了漫咖啡的典型气质：<b>大空间、柔光、绿植、松饼与简餐</b>，适合休闲小憩、朋友聚餐、情侣约会，也供应早餐。综合评分约 4.3。</p>
+        <div class="callout info">一句话：如果你想要的是“找个舒服地方待一下午”，而不是“一杯高水准手冲”，漫咖啡正好；它卖的是氛围和时间，不是咖啡本身。</div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">02</div><div><h2>来龙去脉</h2><div class="en">THE STORY</div></div></div>
+      <div class="card">
+        <p><b>2011 年，韩裔餐饮人辛子相</b>（亦经营韩式烤肉“爱江山”）在中国推出漫咖啡。彼时中国咖啡市场仍以“商务/效率”为主，漫咖啡用<b>韩式美学 + 大空间 + 现做松饼简餐</b>切入“慢社交”场景，迅速走红，全国门店一度超百家。</p>
+        <p>它的设计语言由建筑师郭准操刀（“归本主义”）：老榆木、未处理钢材、玻璃、石灰墙、树、水晶灯——刻意营造自然、浪漫、略带工业复古的质感；再配上<b>泰迪熊送餐</b>和随处可见的童趣小熊，击中了都市人对“第三空间”的想象。</p>
+        <p>不过近年故事有了转折：<span class="hl">9.9 元咖啡（瑞幸、库迪）与精品咖啡的双向夹击</span>，加上大店租金与现做简餐的高成本，让“慢咖啡”模式承压，2024 年起多地门店被曝关闭。它从一个“慢生活样本”变成了行业变迁的注脚。</p>
+      </div>
+      <div class="tl">
+        <div class="ev"><div class="yr">2011</div><div class="tx">辛子相推出漫咖啡，主打韩式慢生活“第三空间”，泰迪熊送餐成标志。</div></div>
+        <div class="ev"><div class="yr">2010s</div><div class="tx">凭借大空间 + 松饼简餐 + 韩剧式美学快速扩张，全国门店超百家。</div></div>
+        <div class="ev"><div class="yr">2024+</div><div class="tx">受低价咖啡与精品咖啡冲击，多地门店关闭；锦江店仍在运营（去前建议确认）。</div></div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">03</div><div><h2>空间与氛围</h2><div class="en">SPACE & VIBE</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>漫咖啡式的“慢空间”</h3>
+          <p>挑高与落地窗引入自然光，老榆木桌椅、钢材、绿植、复古吊灯与水晶灯交织出温暖复古感。座位多、间距松，适合长待；柔光与背景音乐让人不自觉放慢节奏。</p>
+        </div>
+        <div class="card">
+          <h3>锦江店的位置感</h3>
+          <p>坐落在人民南路三段盛捷江畔服务公寓一层，背靠锦江宾馆、距南门大桥与华西坝都很近。点评关键词：环境小资优雅、停车方便、现点现做。是南门大桥—华西坝一带少有的大店咖啡。</p>
+        </div>
+      </div>
+      <div class="callout tip">招牌细节：点完单后，一只颜色各异的<b>泰迪熊</b>会被放在你桌上当“送餐提示”，餐齐即撤——等待因为小熊变得有意思。</div>
+    </section>
+
+    <!-- 04 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">04</div><div><h2>有什么好玩 / 体验</h2><div class="en">WHAT TO DO</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>消磨一下午</h3>
+          <p>带本书、电脑或朋友，点一杯咖啡就能久坐。比起“快取快走”，这里鼓励你留下来聊天、办公、发呆——这正是它的核心价值。</p>
+        </div>
+        <div class="card">
+          <h3>招牌松饼 / 华夫饼</h3>
+          <p>原味华夫饼、冰淇淋水果松饼、千层松饼、芝士松饼、草莓松饼……现做、份量足，是漫咖啡的“必点理由”，也常被当作甜品正餐。</p>
+        </div>
+        <div class="card">
+          <h3>花式咖啡 & 简餐</h3>
+          <p>拿铁、摩卡、焦糖玛奇朵；简餐有火腿三明治、韩式烤牛肉堡 / 帕尼尼、牛肉披萨、水果沙拉。供应早餐。</p>
+        </div>
+        <div class="card">
+          <h3>聚会 & 拼桌社交</h3>
+          <p>大空间天然适合同学聚会、同事闲聊、家庭周末、情侣约会。自助餐吧备有热水、柠檬水、方糖与奶伴侣，自由取用。</p>
+        </div>
+      </div>
+      <div class="callout warn">诚实提醒：漫咖啡是连锁“氛围型”咖啡，不是精品咖啡馆——别用单一产区、手冲水准去期待它；它的强项是空间与松饼，不是豆子。</div>
+    </section>
+
+    <!-- 05 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">05</div><div><h2>消费参考</h2><div class="en">HOW MUCH</div></div></div>
+      <table>
+        <thead><tr><th>项目</th><th>参考价 / 说明</th></tr></thead>
+        <tbody>
+          <tr><td>人均消费</td><td><span class="price">约 ¥37–46</span>（平价路线）</td></tr>
+          <tr><td>招牌松饼 / 华夫饼</td><td>约 ¥30+ 一份，份量足、适合分享</td></tr>
+          <tr><td>花式咖啡</td><td>拿铁 / 摩卡 / 焦糖玛奇朵等，约 ¥30 上下</td></tr>
+          <tr><td>简餐</td><td>三明治、韩式烤牛肉堡 / 帕尼尼、披萨等</td></tr>
+          <tr><td>早餐</td><td>锦江店供应早餐</td></tr>
+          <tr><td>自助区</td><td>热水、柠檬水、方糖、奶伴侣免费自取</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 06 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">06</div><div><h2>实用攻略</h2><div class="en">PRACTICAL INFO</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>地址 & 交通</h3>
+          <p><b>地址：</b>成都市武侯区人民南路三段 1 号附 1 号盛捷江畔服务公寓 1 层（近锦江宾馆 / 南门大桥）。</p>
+          <p><b>地铁：</b>1 号线<b>锦江宾馆站</b>、<b>华西坝站</b>（B 口）。</p>
+        </div>
+        <div class="card">
+          <h3>营业 & 联系</h3>
+          <p><b>营业时间：</b>约 <b>08:30 – 24:00</b>（以现场为准）。</p>
+          <p><b>电话：</b>(028)64292239 / 17628020052</p>
+          <p><b>评分：</b>约 4.3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">07</div><div><h2>半日行程建议</h2><div class="en">A SLOW AFTERNOON</div></div></div>
+      <ul class="route">
+        <li><b>09:30</b><span>到店吃份早餐 / 松饼，靠窗位点杯拿铁，慢悠悠开始一天。</span></li>
+        <li><b>11:00</b><span>步行至南门大桥、锦江边走走，或去华西坝看老建筑与校园。</span></li>
+        <li><b>14:00</b><span>回店续杯，看书 / 办公 / 聊天，把下午“浪费”在柔光里。</span></li>
+        <li><b>19:00</b><span>沿黉门街往南河方向，可顺路去家吧（JahBar）听一场 Jam——咖啡与音乐连成一条“南门大桥慢生活”动线。</span></li>
+      </ul>
+    </section>
+
+    <!-- 08 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">08</div><div><h2>避坑贴士</h2><div class="en">GOOD TO KNOW</div></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>预期管理</h3>
+          <p>连锁“氛围型”咖啡，不是精品咖啡馆；豆子与冲煮水准普通，冲着专业咖啡来的会失望。</p>
+        </div>
+        <div class="card">
+          <h3>营业确认</h3>
+          <p>受行业调整影响，部分门店关停；去前务必确认锦江店当天营业，并留意营业时间差异。</p>
+        </div>
+      </div>
+      <div class="callout tip">同片区可串：南门大桥—华西坝—黉门街一线，把漫咖啡（白天慢咖啡）与家吧 JahBar（夜晚 Jam）连成一日，正好呼应 The Paper Atlas 里“发现一种本地人的周末生活”。</div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <p class="footer-title">The Paper Atlas · 中文白皮书</p>
+        <p class="footer-sub">去探索世界，把值得体验的东西留下来。</p>
+      </div>
+      <div class="footer-note">
+        <p>© 2026 The Paper Atlas · 独立调研，客观记录</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

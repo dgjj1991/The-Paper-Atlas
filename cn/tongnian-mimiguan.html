@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>童年秘密档案馆 · 旅行白皮书 — The Paper Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  :root {
+    --primary: #3a3a45;
+    --primary-light: #ececf0;
+    --accent: #ef6c57;
+    --accent-light: #fdeee9;
+    --ink: #23222a;
+    --ink-soft: #6a6874;
+    --paper: #fbfaf7;
+    --card: #ffffff;
+    --line: #e5e4e9;
+    --seed: #7fb069;
+  }
+  body {
+    font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+    background: var(--paper); color: var(--ink); line-height: 1.75;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .hero-childhood {
+    background: linear-gradient(135deg, #33333c 0%, #26262e 60%, #1c1c22 100%);
+    color: #fff; padding: 54px 24px 46px; position: relative; overflow: hidden;
+    border-bottom: 4px solid var(--accent);
+  }
+  .hero-childhood::before {
+    content: ""; position: absolute; right: -60px; top: -60px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(239,108,87,.35), transparent 70%);
+  }
+  .hero-childhood .inner { position: relative; max-width: 920px; margin: 0 auto; }
+  .kicker {
+    display: inline-block; font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--accent-light); border: 1px solid rgba(239,108,87,.5);
+    padding: 5px 14px; border-radius: 30px; margin-bottom: 18px; font-family: var(--font-sans);
+  }
+  .hero-childhood h1 { font-size: clamp(34px, 6vw, 48px); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; color: #fff; }
+  .hero-childhood .sub { font-size: 16px; opacity: .9; margin-top: 10px; color: #ececf0; }
+
+  .snap {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(40,30,40,.08);
+    margin: -34px auto 0; padding: 24px 26px; display: grid;
+    grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; max-width: 880px;
+    font-family: var(--font-sans);
+  }
+  .snap .item .k { font-size: 12px; color: var(--ink-soft); letter-spacing: .05em; }
+  .snap .item .v { font-size: 15px; font-weight: 700; margin-top: 3px; color: var(--ink); }
+  .snap .item .v span { color: var(--accent); }
+
+  section { margin-top: 48px; }
+  .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .sec-num {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), #d5533e);
+    color: #fff; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-sans);
+  }
+  .sec-head h2 { font-size: 24px; font-weight: 800; letter-spacing: .01em; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 16px; }
+  .card h3 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+  .card h3::before { content: "▎"; color: var(--accent); margin-right: 6px; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14.5px; background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--line); font-family: var(--font-sans); }
+  th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { background: #f3f3f6; font-weight: 700; color: #3a3a45; font-size: 13.5px; }
+
+  .callout { border-radius: 12px; padding: 14px 18px; margin: 16px 0; font-size: 14.5px; border-left: 4px solid; }
+  .callout.tip { background: #f0fdf4; border-color: var(--seed); color: #255828; }
+  .callout.warn { background: var(--accent-light); border-color: var(--accent); color: #9c3624; }
+  .callout.info { background: var(--primary-light); border-color: var(--primary); color: #2a2a35; }
+
+  @media(max-width:680px){
+    .snap { grid-template-columns: repeat(2, 1fr); }
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Global Nav -->
+  <nav class="global-nav">
+    <div class="container">
+      <a href="index.html">
+        <span>← 返回中文专栏列表</span>
+      </a>
+      <div class="global-nav__links">
+        <a href="../index.html">Atlas 首页</a>
+        <a href="../en/tongnian-mimiguan.html">English Guide →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-childhood">
+    <div class="inner">
+      <span class="kicker">The Paper Atlas · 成都文化旅行白皮书</span>
+      <h1>童年秘密档案馆</h1>
+      <p class="sub">一间 30㎡ 的玻璃房子，收藏了几千份横跨 70 年的童年心事 · 玉林东路社区</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SNAPSHOT -->
+    <div class="snap">
+      <div class="item"><div class="k">它是什么</div><div class="v">社区公共艺术 <span>秘密档案馆</span></div></div>
+      <div class="item"><div class="k">创立</div><div class="v"><span>2019</span> 年 · 胡燕子+赵雪彤</div></div>
+      <div class="item"><div class="k">位置</div><div class="v">武侯区 <span>玉林三巷小巷内</span></div></div>
+      <div class="item"><div class="k">门票</div><div class="v">完全<span>免费</span> · 禁止拍照</div></div>
+    </div>
+
+    <!-- 01 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">01</div><div><h2>它是什么</h2></div></div>
+      <div class="card">
+        <p>在玉林东路社区的小巷里，有一座<b>没有招牌的玻璃房子</b>——玻璃橱窗里一块小黑板上写着“童年秘密档案馆”。30 平方米的空间里，整齐叠放着几千份“童年秘密”档案：写下它们的人，最年长的生于 1947 年，最年幼的生于 2019 年。</p>
+        <p>它由策展人<b>胡燕子</b>与艺术家<b>赵雪彤</b>联合发起，是一个<b>社区公共艺术项目</b>。你可以翻阅陌生人的童年，也可以关上门、剥一颗糖，写下自己的秘密。</p>
+        <div class="callout info">一句话：这不是景点，是一间“家附近的童年庇护所”。它安静、克制、免费，半小时到一小时刚好。</div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">02</div><div><h2>空间与规则</h2></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>30㎡ 的四个分区</h3>
+          <p>档案区、秘密录入区、作品展示区、研讨区。档案按年代分档，每 10 年一叠，可以自取翻阅——但<b>严禁拍照</b>，秘密只属于坐在这里的人。</p>
+        </div>
+        <div class="card">
+          <h3>一盏台灯与一罐糖</h3>
+          <p>秘密录入室里放着一罐彩色糖果，标签写着：“甜的，糖，想吃可以拿。”光圈落在白色桌面上，剥开糖纸即可静心书写。</p>
+        </div>
+      </div>
+      <div class="callout warn">唯一的规矩：禁止拍照。这不是防游客的管理条款，而是对每一份秘密的严肃承诺。</div>
+    </section>
+
+    <!-- 03 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">03</div><div><h2>实用攻略</h2></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>地址 & 交通</h3>
+          <p><b>地址：</b>成都市武侯区玉林东路社区 · 玉林三巷（社区小广场对面玻璃房）。</p>
+          <p><b>地铁：</b>1 号线倪家桥站 / 火车南站步行可达。</p>
+        </div>
+        <div class="card">
+          <h3>门票 & 开放</h3>
+          <p><b>门票：</b>完全免费，无需预约。</p>
+          <p><b>时间：</b>约周一至周五 08:00–18:30（以现场为准）。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <p class="footer-title">The Paper Atlas · 中文白皮书</p>
+        <p class="footer-sub">去探索世界，把值得体验的东西留下来。</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

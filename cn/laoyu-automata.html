@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老鱼的机巧屋 · 旅行白皮书 — The Paper Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  :root {
+    --primary: #8b5e34;
+    --primary-light: #f4ece1;
+    --accent: #c9862b;
+    --accent-light: #faf1e0;
+    --ink: #2b2218;
+    --paper: #fbf8f2;
+    --card: #ffffff;
+    --line: #e9e0d2;
+  }
+  body {
+    font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+    background: var(--paper); color: var(--ink); line-height: 1.75;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .hero-laoyu {
+    background: linear-gradient(135deg, #7a5230 0%, #5f3f24 60%, #46301c 100%);
+    color: #fff; padding: 54px 24px 46px; position: relative; overflow: hidden;
+    border-bottom: 4px solid var(--accent);
+  }
+  .hero-laoyu .inner { position: relative; max-width: 920px; margin: 0 auto; }
+  .kicker {
+    display: inline-block; font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--accent-light); border: 1px solid rgba(201,134,43,.5);
+    padding: 5px 14px; border-radius: 30px; margin-bottom: 18px; font-family: var(--font-sans);
+  }
+  .hero-laoyu h1 { font-size: clamp(34px, 6vw, 48px); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; color: #fff; }
+  .hero-laoyu .sub { font-size: 16px; opacity: .9; margin-top: 10px; color: #f4ece1; }
+
+  .snap {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(50,40,30,.08);
+    margin: -34px auto 0; padding: 24px 26px; display: grid;
+    grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; max-width: 880px;
+    font-family: var(--font-sans);
+  }
+  .snap .item .k { font-size: 12px; color: #6f6152; letter-spacing: .05em; }
+  .snap .item .v { font-size: 15px; font-weight: 700; margin-top: 3px; color: var(--ink); }
+  .snap .item .v span { color: var(--primary); }
+
+  section { margin-top: 48px; }
+  .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .sec-num {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), #5f3f24);
+    color: #fff; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-sans);
+  }
+  .sec-head h2 { font-size: 24px; font-weight: 800; letter-spacing: .01em; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 16px; }
+  .card h3 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+  .card h3::before { content: "▎"; color: var(--accent); margin-right: 6px; }
+
+  @media(max-width:680px){
+    .snap { grid-template-columns: repeat(2, 1fr); }
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Global Nav -->
+  <nav class="global-nav">
+    <div class="container">
+      <a href="index.html">
+        <span>← 返回中文专栏列表</span>
+      </a>
+      <div class="global-nav__links">
+        <a href="../index.html">Atlas 首页</a>
+        <a href="../en/laoyu-automata.html">English Guide →</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-laoyu">
+    <div class="inner">
+      <span class="kicker">The Paper Atlas · 成都文化旅行白皮书</span>
+      <h1>老鱼的机巧屋</h1>
+      <p class="sub">自动机械装置 (Automata) 与木作巧思的手工奇境</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SNAPSHOT -->
+    <div class="snap">
+      <div class="item"><div class="k">它是什么</div><div class="v">木作机巧 <span>Automata</span></div></div>
+      <div class="item"><div class="k">特色</div><div class="v">齿轮凸轮 <span>机械装置</span></div></div>
+      <div class="item"><div class="k">体验</div><div class="v">动手摇晃 <span>巧思解密</span></div></div>
+      <div class="item"><div class="k">属性</div><div class="v">独立工作室 <span>手作工坊</span></div></div>
+    </div>
+
+    <!-- 01 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">01</div><div><h2>它是什么</h2></div></div>
+      <div class="card">
+        <p><b>老鱼的机巧屋</b>是一间充满了童趣与物理巧思的自动机械装置（Automata）手作工作室。这里摆满了主理人老鱼亲手制作的各种木质机械联动装置——只要转动手柄，木雕小人就会踩单车、飞鸟羽翼就会翩翩扇动、齿轮与凸轮在无声中精密协作。</p>
+        <p>它将木工雕刻、经典机械物理与童心幻想完美结合，是独立匠人精神在成都市井空间里的温暖体现。</p>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section>
+      <div class="sec-head"><div class="sec-num">02</div><div><h2>实用攻略</h2></div></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>互动与体验</h3>
+          <p>大部分机巧装置都支持互动试玩，转动手柄感受木质机械传动的机械美学。请温柔对待每一件独立手作成果。</p>
+        </div>
+        <div class="card">
+          <h3>拜访贴士</h3>
+          <p>工坊空间有限且常包含创作时段，建议前往前确认开放状态或预约，适合手作爱好者、机械迷与亲子探索。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <p class="footer-title">The Paper Atlas · 中文白皮书</p>
+        <p class="footer-sub">去探索世界，把值得体验的东西留下来。</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

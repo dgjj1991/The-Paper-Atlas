@@ -16,7 +16,8 @@
 ### 🇨🇳 中文专栏 (Chinese Edition)
 - `cn/index.html`: 深度白皮书列表页。
 - **包含的核心专题**:
-  - **【🎓 成都教育专题：人文学养、儿童友好与独立思考】**: 涵盖童年秘密档案馆、成都有杏书店、老鱼的机巧屋、空舟美术馆。
+  - **【🎓 成都教育专题】**: 涵盖童年秘密档案馆、成都有杏书店、老鱼的机巧屋、空舟美术馆。
+  - **【🌏 海外自由行·泰国清迈专题】**: 涵盖清迈飞盘之旅（Chiang Mai Ultimate）、通信网络避坑铁律、清迈大学（CMU）湖边慢生活动线。
 - **已收录白皮书文件**:
   1. `cn/youxing-bookstore.html` — 成都有杏书店
   2. `cn/jinqin-teahouse.html` — 成都金琴老茶馆
@@ -25,6 +26,7 @@
   5. `cn/tongnian-mimiguan.html` — 童年秘密档案馆
   6. `cn/kongzhou-art-museum.html` — 空舟美术馆
   7. `cn/laoyu-automata.html` — 老鱼的机巧屋
+  8. `cn/chiangmai-ultimate.html` — 清迈飞盘之旅 (Chiang Mai Ultimate)
 
 ### 🌍 英文专栏 (English Edition)
 - `en/index.html`: Discover China / The Chengdu Paper 英文列表页。
